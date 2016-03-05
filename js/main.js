@@ -346,14 +346,14 @@ var settings = {
 
         map.zoomControl = L.control.zoom({
             position: 'bottomright',
-            zoomInTitle: 'Приблизить',
-            zoomOutTitle: 'Отдалить'
+            zoomInTitle: 'Zoom In',
+            zoomOutTitle: 'Zoom Out'
         }).addTo(map);
 
         L.control.resetZoom({
             position: 'bottomright',
             strings: {
-                reset: 'Переключить вид'
+                reset: 'Switch View'
             }
         }).addTo(map);
 
@@ -371,7 +371,7 @@ var settings = {
             ;
 
         function calcRelation(obj) {
-            return obj.key + ' (' + moneyFormat(obj.value) + ' руб.)';
+            return obj.key + ' (' + moneyFormat(obj.value) + ' US$.)';
         }
 
         function printRelations(rel) {
@@ -521,10 +521,10 @@ var settings = {
                 keepOpen: true,
                 position: 'topright',
                 strings: {
-                    play: 'Запусить',
-                    stop: 'Остановить',
-                    pause: 'Приостановить',
-                    repeat: 'Начать занова'
+                    play: 'Play',
+                    stop: 'Stop',
+                    pause: 'Pause',
+                    repeat: 'Repeat'
                 }
             }).addTo(map);
 
@@ -582,13 +582,13 @@ var settings = {
             visLayer.addTo(map);
 
             L.control.layers({
-                'Тёмная карта' : googleDark.addTo(map),
-                'Тёмная карта 2' : googleDarkII
+                'GoogleMap Dark' : googleDark.addTo(map),
+                'GoogleMap 2' : googleDarkII
             }, {
-                'Легеда': legend,
-                'Тепловая диаграмма (рестораны)': heatSupplier.addTo(map),
-                'Тепловая диаграмма (клиеты)': heat.addTo(map),
-                'Метки': markers.addTo(map)
+                'Legend': legend,
+                'Heat Map (Agency)': heatSupplier.addTo(map),
+                'Heat Map (Employee)': heat.addTo(map),
+                'Tags': markers.addTo(map)
             }).addTo(map);
 
             L.control.fullscreen({position: 'bottomright'}).addTo(map);
@@ -727,10 +727,10 @@ var settings = {
                 })
                 .on('parsing', function () {
                     yearLabel.html([
-                        "Анализ... <strong>",
+                        "Analysis... <strong>",
                         Math.floor(curPos++ / 2),
                         "</strong>",
-                        " из ",
+                        " of ",
                         data.length / 2
                     ].join(''));
                 })
@@ -960,10 +960,10 @@ var settings = {
                 allCounters.summary = 0;
                 cats.forEach(rename);
                 allCounters.html([
-                    'всего заказов: ',
+                    'All Orders: ',
                     allCounters.orders,
                     '<br/>',
-                    'сумма, руб: ',
+                    'Amount, $: ',
                     moneyFormat(allCounters.summary),
                     '<br/>'
                 ].join(''));
@@ -978,9 +978,9 @@ var settings = {
                 value.name = [
                     value.key,
                     ' [',
-                    'заказов: ',
+                    'Orders: ',
                     value.now.length,
-                    '; cумма, руб: ',
+                    '; Amount, US$: ',
                     moneyFormat(sum),
                     '] '
                 ].join('');
