@@ -326,7 +326,7 @@ var settings = {
             position: 'bottomright',
             strings: {
                 label: '<span class="oi" data-glyph="timer"></span>',
-                title: 'Скорость'
+                title: 'Speed'
             },
             max : settings.maxSpeed,
             min : 0,
@@ -831,7 +831,7 @@ var settings = {
                         if (!parentMarker[tp._id] && d.parentNode.nodeValue instanceof Supplier) {
                             var marker = parentMarker[tp._id] = L.marker(tp.latlng, {
                                 icon: L.mapbox.marker.icon({
-                                    'marker-symbol': tp instanceof Supplier ? 'restaurant' : 'warehouse' ,
+                                    'marker-symbol': tp instanceof Supplier ? 'Agency' : 'Merchant' ,
                                     'marker-color': '222234'
                                 })
                             });
