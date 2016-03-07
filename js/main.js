@@ -24,7 +24,7 @@ var settings = {
     , stepDate : 24 * 60 * 60 * 1000
 
     // размер частиц (можно попробывать и другие d3.scale)
-    , sizes : d3.scale.linear().range([1, 20])
+    , sizes : d3.scale.linear().range([1, 200])
 
     // цвета частиц (можно задать и вот так d3.scale.ordinal.domain(['pie', 'roll', ...]).range(['red', 'blue', ...]))
     // https://github.com/mbostock/d3/blob/master/src/scale/category.js
